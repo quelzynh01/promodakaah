@@ -189,3 +189,4 @@ aside{display:flex;flex-direction:column;gap:18px;position:sticky;top:90px}
  .comprar-fixo .btn{min-width:0;font-size:15px;padding:13px 10px}
 }
 @media (max-width:420px){.comprar-fixo .bt-longo{display:none}.comprar-fixo .bt-curto{display:inline}}
+@media (max-width:760px){.barra{display:none!important}}
