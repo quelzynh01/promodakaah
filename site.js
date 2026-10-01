@@ -23,7 +23,7 @@
   if(!grade)return;
 
   // filtros / ordem / "carregar mais" da página inicial
-  var POR_PAG=24,mostrar=POR_PAG;
+  var POR_PAG=23,mostrar=POR_PAG;
   var p=new URLSearchParams(location.search);
   var f={loja:p.get("loja")||"",cat:p.get("cat")||"",q:(p.get("q")||"").toLowerCase(),ordem:p.get("ordem")||"recentes"};
   if(campo)campo.value=p.get("q")||"";
@@ -42,9 +42,9 @@
     vis.slice(0,mostrar).forEach(function(c){c.classList.remove("hide")});
     $("#vazio").classList.toggle("hide",vis.length>0);
     $("#maisBtn").classList.toggle("hide",vis.length<=mostrar);
-    $("#contagem").textContent=vis.length?("Mostrando "+Math.min(mostrar,vis.length)+" de "+vis.length+" ofertas"):"";
+    $("#contagem").textContent=vis.length>POR_PAG?("Página "+Math.ceil(Math.min(mostrar,vis.length)/POR_PAG)+" de "+Math.ceil(vis.length/POR_PAG)):"";
     $("#limpar").classList.toggle("hide",!(f.loja||f.cat||f.q));
-    $("#titLista").textContent=f.q?('Resultados para "'+f.q+'"'):"Ofertas Recentes";
+    $("#titLista").textContent=f.q?('Resultados: "'+f.q+'"'):"Ofertas Recentes";
     document.querySelectorAll(".chip").forEach(function(b){var on=b.dataset.f==="todas"?!(f.loja||f.cat):f[b.dataset.f]===b.dataset.v;b.classList.toggle("on",on)});
     document.querySelectorAll(".atalho").forEach(function(b){b.classList.toggle("on",!!((b.dataset.f&&f[b.dataset.f]===b.dataset.v)||(b.dataset.ordem&&f.ordem===b.dataset.ordem)))});
     var u=new URLSearchParams();["loja","cat","q"].forEach(function(k){if(f[k])u.set(k,f[k])});if(f.ordem!=="recentes")u.set("ordem",f.ordem);

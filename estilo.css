@@ -190,3 +190,24 @@ aside{display:flex;flex-direction:column;gap:18px;position:sticky;top:90px}
 }
 @media (max-width:420px){.comprar-fixo .bt-longo{display:none}.comprar-fixo .bt-curto{display:inline}}
 @media (max-width:760px){.barra{display:none!important}}
+/* ── lista alinhada (modelo) ── */
+.sec-tit h2{white-space:nowrap}
+.item{min-height:0;align-items:stretch}
+.item .foto{flex:0 0 112px;width:112px;height:112px;margin:12px 0 12px 12px;padding:6px;border-radius:12px;align-self:flex-start}
+.item .foto img{max-height:100%}
+.item-info{display:grid;grid-template-rows:auto auto auto 1fr;gap:5px;padding:12px 12px 12px 12px}
+.item h3{font-size:14px;font-weight:700;min-height:2.7em}
+.item .precos{flex-wrap:nowrap;white-space:nowrap;overflow:hidden}
+.item .precos b{font-size:18px}
+.item .acessar{justify-self:end;align-self:end;padding:8px 14px;font-size:13.5px;border-radius:10px;gap:6px}
+.precos .tag-cupom{font-size:11px;padding:2px 7px;overflow:hidden;text-overflow:ellipsis;max-width:120px}
+.card .precos{flex-wrap:nowrap;white-space:nowrap;overflow:hidden}
+@media (max-width:760px){
+ .sec-tit h2{font-size:17px}
+ .ordem span{display:none}
+ .comprar-fixo .btn{font-size:16px;padding:15px 12px}
+}
+.item .foto{flex-basis:98px;width:98px;height:98px;margin:12px 0 12px 10px}
+.item-info{padding:12px 10px 12px 10px}
+.item .precos{gap:5px}
+.item .precos s{font-size:11.5px}.item .precos b{font-size:17px}.item .precos em{font-size:11px}
