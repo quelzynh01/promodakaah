@@ -163,3 +163,29 @@ aside{display:flex;flex-direction:column;gap:18px;position:sticky;top:90px}
 }
 #titLista,#categorias{scroll-margin-top:84px}
 .compra .btn{font-size:16.5px;white-space:nowrap}
+/* produto no celular: preço + botão sempre na tela */
+.voltar{font-weight:700;color:#4a4352;margin:-2px 0 10px;font-size:15px}
+.fixo-preco{flex-direction:column;line-height:1.1;min-width:0}
+.fixo-preco s{font-size:11.5px;color:var(--mut)}
+.fixo-preco b{font-size:21px;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+.fixo-preco em{font-style:normal;font-size:11.5px;font-weight:800;color:var(--verde)}
+@media (max-width:760px){
+ body:has(.produto) .barra{display:none}
+ .produto .trilha{display:none}
+ body:has(.produto) .trilha{display:none}
+ .foto-g{padding:8px}
+ .foto-g img{max-height:34vh}
+ .esq .loja{margin-bottom:6px}.esq .loja .selo.g{width:32px;height:32px;font-size:15px}
+ .esq .quando{margin-top:8px}
+ .esq h1{font-size:18px}
+ .comprar-fixo{display:flex;align-items:center;gap:12px}
+ .comprar-fixo .fixo-preco{display:flex!important}
+ .comprar-fixo .btn{flex:1;font-size:15.5px;padding:14px 12px;white-space:nowrap}
+}
+.bt-curto{display:none}
+@media (max-width:760px){
+ .comprar-fixo{gap:10px}
+ .comprar-fixo .fixo-preco{flex:none;max-width:42%}
+ .comprar-fixo .btn{min-width:0;font-size:15px;padding:13px 10px}
+}
+@media (max-width:420px){.comprar-fixo .bt-longo{display:none}.comprar-fixo .bt-curto{display:inline}}
