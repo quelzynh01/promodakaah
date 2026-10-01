@@ -12,9 +12,10 @@
     var h=b.innerHTML;b.textContent="COPIADO ✓";b.classList.add("ok");setTimeout(function(){b.innerHTML=h;b.classList.remove("ok")},1800);});
   // menu lateral e busca (celular)
   var gav=$("#gaveta"),busca=$("#busca"),campo=busca&&busca.querySelector("input");
-  if($("#abrirMenu"))$("#abrirMenu").onclick=function(){gav.classList.add("on")};
-  if($("#fecharMenu"))$("#fecharMenu").onclick=function(){gav.classList.remove("on")};
-  if(gav)gav.addEventListener("click",function(e){if(e.target===gav||e.target.closest(".gaveta-in>a"))gav.classList.remove("on")});
+  function menu(on){gav.classList.toggle("on",on);document.documentElement.classList.toggle("travado",on)}
+  if($("#abrirMenu"))$("#abrirMenu").onclick=function(){menu(true)};
+  if($("#fecharMenu"))$("#fecharMenu").onclick=function(){menu(false)};
+  if(gav)gav.addEventListener("click",function(e){if(e.target===gav||e.target.closest(".gaveta-menu a"))menu(false)});
   function abrirBusca(){busca.classList.add("on");campo.focus()}
   if($("#abrirBusca"))$("#abrirBusca").onclick=function(){busca.classList.contains("on")?busca.classList.remove("on"):abrirBusca()};
 

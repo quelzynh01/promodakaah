@@ -211,3 +211,28 @@ aside{display:flex;flex-direction:column;gap:18px;position:sticky;top:90px}
 .item-info{padding:12px 10px 12px 10px}
 .item .precos{gap:5px}
 .item .precos s{font-size:11.5px}.item .precos b{font-size:17px}.item .precos em{font-size:11px}
+/* ── menu lateral (modelo) ── */
+html.travado,html.travado body{overflow:hidden;overscroll-behavior:none}
+.gaveta{height:100vh;height:100dvh;overscroll-behavior:contain;touch-action:none}
+.gaveta-in{height:100vh;height:100dvh;padding:0;gap:0;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y;width:min(320px,86vw)}
+.gaveta-topo{background:var(--cor);color:#fff;padding:14px 16px;margin:0;min-height:88px}
+.gaveta-topo .marca{color:#fff}
+.gaveta-topo .ico{color:#fff;font-size:22px}
+.gaveta-menu{display:flex;flex-direction:column;padding:18px 8px 6px}
+.gaveta-menu a{display:flex;gap:10px;align-items:center;padding:13px 12px;border-radius:10px;font-weight:800;font-size:15px;color:var(--tx)}
+.gaveta-menu a:hover{background:var(--fundo)}
+.gaveta-menu svg{width:20px;height:20px}
+.gaveta-redes{padding:14px 20px}
+.gaveta-redes b{display:block;font-size:15px;margin-bottom:10px}
+.gaveta-redes div{display:flex;gap:14px}
+.gaveta-redes a{width:34px;height:34px;display:grid;place-items:center;color:var(--tx)}
+.gaveta-redes svg{width:24px;height:24px}
+.gaveta-grupo{margin:auto 20px calc(20px + env(safe-area-inset-bottom));display:flex;justify-content:center;align-items:center;gap:9px;background:#56b85a;color:#fff;font-weight:800;font-size:15px;border-radius:99px;padding:15px}
+.redes.g{display:none}
+.gaveta-topo{display:flex;justify-content:space-between;align-items:center}
+.gaveta-topo .marca{position:static!important;transform:none!important;font-size:17px}
+.gaveta-grupo{white-space:nowrap;font-size:14.5px;padding:15px 12px}
+.gaveta-grupo svg{width:20px;height:20px;flex:none}
+.gaveta-grupo{margin-left:16px;margin-right:16px;font-size:14px;gap:7px;letter-spacing:-.01em}
+@media (max-width:340px){.gaveta-grupo{white-space:normal;text-align:center}}
+.gaveta-grupo{font-size:15px;font-weight:700;letter-spacing:0;white-space:nowrap;padding:14px 18px;margin-left:20px;margin-right:20px}
