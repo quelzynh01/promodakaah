@@ -24,7 +24,7 @@
   if(!grade)return;
 
   // filtros / ordem / "carregar mais" da página inicial
-  var POR_PAG=23,mostrar=POR_PAG;
+  var POR_PAG=24,mostrar=POR_PAG;
   var p=new URLSearchParams(location.search);
   var f={loja:p.get("loja")||"",cat:p.get("cat")||"",q:(p.get("q")||"").toLowerCase(),ordem:p.get("ordem")||"recentes"};
   if(campo)campo.value=p.get("q")||"";
