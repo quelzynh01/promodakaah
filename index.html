@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-BR"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -6,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
 
-<script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script>
+<script>
   const REDIRECT_URL = "https://chat.whatsapp.com/KrqTmdB12MPE83leKkVWGL";
   const PIXEL_ID     = "1071372572462229";
   const MEMBROS      = "+1.506";
@@ -14,23 +15,17 @@
 </script>
 
 <!-- Meta Pixel -->
-<!-- Meta Pixel Code -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1071372572462229');
-fbq('track', 'PageView');
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', PIXEL_ID);
+  fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1071372572462229&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+<noscript><img height="1" width="1" style="display:none" alt=""
+  src="https://www.facebook.com/tr?id=1071372572462229&amp;ev=PageView&amp;noscript=1"></noscript>
 
 <style>
   :root{
@@ -194,11 +189,6 @@ src="https://www.facebook.com/tr?id=1071372572462229&ev=PageView&noscript=1"
   document.getElementById('membros').textContent = MEMBROS;
   document.getElementById('avaliacao').textContent = AVALIACAO;
 
-  if (PIXEL_ID && PIXEL_ID.length) {
-    fbq('init', PIXEL_ID);
-    fbq('track', 'PageView');
-  }
-
   function handleCTA(e){
     e.preventDefault();
     var go = function(){ window.location.href = REDIRECT_URL; };
@@ -206,7 +196,7 @@ src="https://www.facebook.com/tr?id=1071372572462229&ev=PageView&noscript=1"
       var fired = false;
       var redirect = function(){ if(!fired){ fired = true; go(); } };
       try { fbq('track', 'Lead', {}, { eventID: 'lead-' + Date.now() }); } catch(_) {}
-      setTimeout(redirect, 350);
+      setTimeout(redirect, 1000);
     } else {
       go();
     }
