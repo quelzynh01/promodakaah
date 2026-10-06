@@ -267,4 +267,14 @@
   setTimeout(agenda,3000);
 })();
 </script>
+<script>
+/* Origem do clique: use ...?origem=bio na bio e ...?origem=anuncio no anúncio */
+(function(){
+  var o = (new URLSearchParams(location.search).get('origem') || 'direto').replace(/[^a-z0-9]/gi,'').toLowerCase() || 'direto';
+  if (typeof fbq === 'function') fbq('trackCustom', 'Visita_' + o);
+  document.getElementById('ctaTop').addEventListener('click', function(){
+    if (typeof fbq === 'function') fbq('trackCustom', 'Clique_' + o);
+  });
+})();
+</script>
 </body></html>
